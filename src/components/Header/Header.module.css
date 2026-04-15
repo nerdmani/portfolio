@@ -90,6 +90,21 @@
   border-color: var(--accent);
 }
 
+.langActive {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.langInactive {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.langSep {
+  color: var(--border-hover);
+  font-weight: 400;
+}
+
 .menuBtn {
   display: none;
   color: var(--text-primary);

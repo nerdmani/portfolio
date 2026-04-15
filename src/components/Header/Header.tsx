@@ -50,7 +50,9 @@ export function Header() {
             aria-label="Switch language"
           >
             <FiGlobe size={16} />
-            {lang === "pt" ? "EN" : "PT"}
+            <span className={lang === "pt" ? styles.langActive : styles.langInactive}>PT</span>
+            <span className={styles.langSep}>|</span>
+            <span className={lang === "en" ? styles.langActive : styles.langInactive}>EN</span>
           </button>
 
           <button

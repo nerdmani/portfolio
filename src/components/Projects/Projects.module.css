@@ -52,6 +52,8 @@
   font-size: 0.85rem;
   line-height: 1.6;
   color: var(--text-muted);
+  text-align: justify;
+  hyphens: auto;
 }
 
 .techTags {
