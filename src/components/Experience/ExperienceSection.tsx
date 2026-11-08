@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { useI18n } from "../../i18n/I18nContext";
@@ -9,6 +9,7 @@ import styles from "./ExperienceSection.module.css";
 function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
   const [open, setOpen] = useState(false);
   const { lang, t } = useI18n();
+  const activitiesId = useId();
 
   return (
     <motion.div
@@ -29,11 +30,25 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
         <span className={styles.period}>{exp.period[lang]}</span>
         <p className={styles.description}>{exp.description[lang]}</p>
 
+        {exp.activitiesReview && (
+          <p className={styles.reviewNote}>{t("exp.review")}</p>
+        )}
+
+        {exp.inProgress && (
+          <div className={styles.inProgress}>
+            <strong>{t("exp.inProgress")}</strong>
+            <p>{exp.inProgress[lang]}</p>
+          </div>
+        )}
+
         {exp.activities && (
           <>
             <button
+              type="button"
               className={styles.toggleBtn}
               onClick={() => setOpen(!open)}
+              aria-expanded={open}
+              aria-controls={activitiesId}
             >
               {open ? t("exp.toggle.hide") : t("exp.toggle.show")}
               {open ? <FiChevronUp size={14} /> : <FiChevronDown size={14} />}
@@ -42,6 +57,7 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
             <AnimatePresence>
               {open && (
                 <motion.div
+                  id={activitiesId}
                   className={styles.activities}
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}

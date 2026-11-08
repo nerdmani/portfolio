@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useI18n } from "../../i18n/I18nContext";
-import { aboutText, stats, technologies } from "../../data/portfolio";
+import { aboutText, profileHighlights, technologies } from "../../data/portfolio";
 import styles from "./About.module.css";
 
 const fadeUp = {
@@ -24,7 +24,7 @@ export function About() {
         transition={{ duration: 0.6 }}
       >
         <p className="section-label">{t("about.label")}</p>
-        <h2 className="section-title">Lucas da Silva Santos</h2>
+        <h2 className="section-title">{t("about.title")}</h2>
       </motion.div>
 
       <div className={styles.grid}>
@@ -41,14 +41,6 @@ export function About() {
             <span className={styles.location}>{t("about.location")}</span>
           </motion.div>
 
-          <div className={styles.tags}>
-            {[t("about.tag1"), t("about.tag2"), t("about.tag3")].map((tag) => (
-              <span key={tag} className={styles.tag}>
-                {tag}
-              </span>
-            ))}
-          </div>
-
           <motion.div
             className={styles.openBadge}
             initial={{ opacity: 0 }}
@@ -61,13 +53,11 @@ export function About() {
           </motion.div>
 
           <div className={styles.highlights}>
-            {[t("about.highlight1"), t("about.highlight2"), t("about.highlight3")].map(
-              (h) => (
-                <span key={h} className={styles.highlight}>
-                  {h}
-                </span>
-              )
-            )}
+            {profileHighlights[lang].map((highlight) => (
+              <span key={highlight} className={styles.highlight}>
+                {highlight}
+              </span>
+            ))}
           </div>
 
           {aboutText[lang].map((text, i) => (
@@ -83,21 +73,6 @@ export function About() {
               {text}
             </motion.p>
           ))}
-
-          <motion.div
-            className={styles.stats}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
-            {stats.map((stat) => (
-              <div key={stat.labelKey} className={styles.stat}>
-                <span className={styles.statValue}>{stat.value}</span>
-                <span className={styles.statLabel}>{t(stat.labelKey)}</span>
-              </div>
-            ))}
-          </motion.div>
         </div>
 
         <motion.div

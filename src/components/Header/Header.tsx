@@ -47,7 +47,7 @@ export function Header() {
           <button
             className={styles.langBtn}
             onClick={() => setLang(lang === "pt" ? "en" : "pt")}
-            aria-label="Switch language"
+            aria-label={t("nav.language")}
           >
             <FiGlobe size={16} />
             <span className={lang === "pt" ? styles.langActive : styles.langInactive}>PT</span>
@@ -58,7 +58,9 @@ export function Header() {
           <button
             className={styles.menuBtn}
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
+            aria-label={t("nav.menu")}
+            aria-expanded={menuOpen}
+            aria-controls={menuOpen ? "mobile-navigation" : undefined}
           >
             {menuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
           </button>
@@ -68,6 +70,7 @@ export function Header() {
       <AnimatePresence>
         {menuOpen && (
           <motion.nav
+            id="mobile-navigation"
             className={styles.mobileNav}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}

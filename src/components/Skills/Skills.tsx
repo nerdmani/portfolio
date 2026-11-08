@@ -29,8 +29,9 @@ export function Skills() {
             transition={{ duration: 0.5, delay: i * 0.08 }}
           >
             <h3 className={styles.catTitle}>{cat.title[lang]}</h3>
+            {cat.note && <p className={styles.catNote}>{cat.note[lang]}</p>}
             <div className={styles.items}>
-              {cat.items.map((item) => (
+              {cat.items[lang].map((item) => (
                 <span key={item} className={styles.item}>
                   {item}
                 </span>
@@ -47,11 +48,14 @@ export function Skills() {
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        <div className={styles.eduIcon}>🎓</div>
+        <div className={styles.eduIcon} aria-hidden="true">
+          🎓
+        </div>
         <div className={styles.eduInfo}>
           <h3 className={styles.eduTitle}>{education.title[lang]}</h3>
           <p className={styles.eduInstitution}>{education.institution}</p>
           <span className={styles.eduPeriod}>{education.period}</span>
+          <p className={styles.eduReview}>{t("skills.educationReview")}</p>
         </div>
       </motion.div>
     </section>

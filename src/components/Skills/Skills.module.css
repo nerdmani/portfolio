@@ -26,6 +26,13 @@
   letter-spacing: 1px;
 }
 
+.catNote {
+  margin: -8px 0 14px;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
 .items {
   display: flex;
   flex-wrap: wrap;
@@ -85,6 +92,13 @@
 .eduPeriod {
   font-size: 0.8rem;
   color: var(--text-muted);
+}
+
+.eduReview {
+  margin-top: 6px;
+  color: #d3b8ff;
+  font-size: 0.75rem;
+  line-height: 1.5;
 }
 
 @media (max-width: 640px) {

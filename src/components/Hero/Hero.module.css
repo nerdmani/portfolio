@@ -60,10 +60,36 @@
 }
 
 .tagline {
-  font-size: 1.15rem;
-  color: var(--text-secondary);
-  margin-bottom: 40px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
   line-height: 1.5;
+}
+
+.description {
+  max-width: 640px;
+  margin: 0 auto 24px;
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.highlights {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.highlight {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(22, 22, 29, 0.8);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
 }
 
 .actions {
@@ -136,5 +162,21 @@
 
   .tagline {
     font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .highlights {
+    gap: 6px;
+  }
+
+  .highlight {
+    font-size: 0.72rem;
+  }
+
+  .scrollDown {
+    bottom: 20px;
   }
 }

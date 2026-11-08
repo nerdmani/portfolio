@@ -30,6 +30,7 @@ export function Contact() {
       >
         <p className="section-label">{t("contact.label")}</p>
         <h2 className="section-title">{t("contact.title")}</h2>
+        <p className={styles.description}>{t("contact.description")}</p>
       </motion.div>
 
       <div className={styles.grid}>

@@ -45,6 +45,28 @@ export function Hero() {
           {t("hero.tagline")}
         </motion.p>
 
+        <motion.p
+          className={styles.description}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.72 }}
+        >
+          {t("hero.description")}
+        </motion.p>
+
+        <motion.div
+          className={styles.highlights}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.78 }}
+        >
+          {[1, 2, 3, 4].map((index) => (
+            <span key={index} className={styles.highlight}>
+              {t(`hero.highlight${index}`)}
+            </span>
+          ))}
+        </motion.div>
+
         <motion.div
           className={styles.actions}
           initial={{ opacity: 0, y: 30 }}
@@ -64,6 +86,7 @@ export function Hero() {
       <motion.a
         href="#about"
         className={styles.scrollDown}
+        aria-label={t("hero.scroll")}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.5 }}

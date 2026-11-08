@@ -77,6 +77,37 @@
   hyphens: auto;
 }
 
+.reviewNote {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(176, 101, 255, 0.3);
+  border-radius: var(--radius-sm);
+  color: #d3b8ff;
+  background: rgba(108, 99, 255, 0.08);
+  font-size: 0.78rem;
+}
+
+.inProgress {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--bg-secondary);
+}
+
+.inProgress strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.inProgress p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
 .toggleBtn {
   display: inline-flex;
   align-items: center;
@@ -90,6 +121,12 @@
 
 .toggleBtn:hover {
   opacity: 0.8;
+}
+
+.toggleBtn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .activities {

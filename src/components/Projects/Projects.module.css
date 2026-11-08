@@ -4,6 +4,17 @@
   gap: 16px;
 }
 
+.projectGroup + .projectGroup {
+  margin-top: 40px;
+}
+
+.groupTitle {
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -20,40 +31,46 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+.card:focus-within {
+  border-color: var(--accent);
+}
+
 .cardHeader {
   display: flex;
+  gap: 12px;
   justify-content: space-between;
   align-items: flex-start;
 }
 
 .name {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-primary);
 }
 
-.language {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.status {
+  display: inline-flex;
+  padding: 4px 9px;
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  border-radius: 999px;
+  background: var(--accent-glow);
+  color: #b7b2ff;
   font-size: 0.8rem;
-  color: var(--text-secondary);
   flex-shrink: 0;
+  text-align: center;
 }
 
-.langDot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #00b4d8;
+.detail h5 {
+  margin-bottom: 3px;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
-.description {
+.detail p {
   font-size: 0.85rem;
   line-height: 1.6;
   color: var(--text-muted);
-  text-align: justify;
-  hyphens: auto;
 }
 
 .techTags {
@@ -71,6 +88,27 @@
   color: var(--accent);
   border-radius: 999px;
   border: 1px solid rgba(108, 99, 255, 0.15);
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  margin-top: 4px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.projectLink:hover {
+  color: var(--text-primary);
+}
+
+.projectLink:focus-visible,
+.allLink:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 .allProjects {
@@ -99,5 +137,9 @@
 @media (max-width: 640px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .cardHeader {
+    flex-direction: column;
   }
 }
