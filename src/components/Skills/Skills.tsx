@@ -55,7 +55,14 @@ export function Skills() {
           <h3 className={styles.eduTitle}>{education.title[lang]}</h3>
           <p className={styles.eduInstitution}>{education.institution}</p>
           <span className={styles.eduPeriod}>{education.period}</span>
-          <p className={styles.eduReview}>{t("skills.educationReview")}</p>
+          <a
+            className={styles.certificateLink}
+            href="/certidao-colacao-grau-ads.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("skills.certificate")}
+          </a>
         </div>
       </motion.div>
     </section>

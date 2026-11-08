@@ -66,7 +66,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Skills
     "skills.label": "Competências",
     "skills.title": "Habilidades & Conhecimentos",
-    "skills.educationReview": "Confirme se o curso foi concluído antes de publicar esta informação.",
+    "skills.certificate": "Visualizar certidão de colação de grau",
 
     // Contact
     "contact.label": "Vamos Conversar",
@@ -135,7 +135,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Skills
     "skills.label": "Competencies",
     "skills.title": "Skills & Knowledge",
-    "skills.educationReview": "Confirm whether the course was completed before publishing this information.",
+    "skills.certificate": "View graduation certificate",
 
     // Contact
     "contact.label": "Let's Talk",

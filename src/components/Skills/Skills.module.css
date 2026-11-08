@@ -94,11 +94,21 @@
   color: var(--text-muted);
 }
 
-.eduReview {
+.certificateLink {
+  align-self: flex-start;
   margin-top: 6px;
-  color: #d3b8ff;
-  font-size: 0.75rem;
-  line-height: 1.5;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.certificateLink:hover {
+  color: var(--text-primary);
+}
+
+.certificateLink:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 @media (max-width: 640px) {
